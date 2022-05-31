@@ -1,12 +1,6 @@
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\testhost.exe
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\testhost.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\TechTalk.SpecFlow.xUnit.SpecFlowPlugin.dll
-C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\NUnit3.TestAdapter.dll
-C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
-C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.engine.dll
-C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.engine.api.dll
-C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.engine.core.dll
-C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\testcentric.engine.metadata.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\TestMAXIPROD.deps.json
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\TestMAXIPROD.runtimeconfig.json
@@ -28,7 +22,6 @@ C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Micr
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\NuGet.Frameworks.dll
-C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.framework.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\WebDriver.Support.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\WebDriver.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\TechTalk.SpecFlow.dll
@@ -124,3 +117,13 @@ C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\xuni
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\xunit.runner.utility.netcoreapp10.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\xunit.assert.dll
 C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Microsoft.Edge.SeleniumTools.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\NUnit3.TestAdapter.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.engine.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.engine.api.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.engine.core.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\testcentric.engine.metadata.dll
+C:\Users\kaio.cesar\source\repos\TestProject1\TestProject1\bin\Debug\net6.0\nunit.framework.dll

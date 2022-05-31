@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using TestMAXIPROD.Menus;
 using TestMAXIPROD.Util;
 
@@ -8,86 +7,84 @@ namespace TestMAXIPROD.Pages
     internal class CadastrarItem
     {
         private readonly IWebDriver driver;
-        private readonly string descricao;
-        private string tipoVenda;
-        private readonly string precoVenda;
-        private readonly string precoMinimo;
-        private string estado;
-        private string procedencia;
-        private Dictionary<string, By> formAcoes;
+        private Dictionary<string, By> formCadastroItem;
+        private Dictionary<string, string> valores;
 
-        public CadastrarItem(IWebDriver driver)
+        public CadastrarItem(IWebDriver _driver)
         {
-            this.driver = driver;
-            // Preencher com os dados que serão testados no cadastro do Item.
-            descricao = "Produto Novo";
-            precoVenda = "200,50";
-            precoMinimo = "199,00";
+            driver = _driver;
 
-            formAcoes = new Dictionary<string, By>()
+            // Dicidionário contendo a chave com o nome do elemento e o valor com a localização de cada elemento do formulario Cadastrar Item.
+            formCadastroItem = new Dictionary<string, By>()
             {
                 {"btnNovoItem", By.XPath("//body/div[2]/div[2]/div[6]/div[1]/input[1]") },
-                {"linkVendas",  By.XPath("//body/div[@id='ModalItens']/div[2]/form[1]/div[2]/span[1]/span[3]/span[2]")},
-                {"btnFinalizar", By.Id("SalvarEFechar")},
-                {"iconeAtualizar", By.XPath("//body/div[2]/div[2]/div[6]/div[1]/div[1]/a[1]")},
-                {"iconeOrdenar", By.XPath("//tbody/tr[1]/th[3]/a[1]") },
                 {"campoDescricao",  By.Name("Descricao")},
+                {"linkVendas",  By.XPath("//body/div[@id='ModalItens']/div[2]/form[1]/div[2]/span[1]/span[3]/span[2]")},
                 {"campoPrecoVenda", By.Name("PrecoVenda")},
                 {"campoPrecoMin", By.Name("PrecoMinimoDeVenda")},
                 {"campoEstado", By.XPath("//tbody/tr[1]/td[1]/div[1]/span[5]/span[1]/div[1]/div[2]/select[1]/option[1]")},
                 {"campoTipoVenda", By.XPath("//tbody[1]/tr[1]/td[1]/span[3]/div[1]/div[2]/select[1]/option[27]")},
-                {"campoProcedencia", By.XPath("//tbody[1]/tr[1]/td[1]/span[2]/div[1]/div[2]/select[1]/option[1]")}
-            };   
+                {"campoProcedencia", By.XPath("//tbody[1]/tr[1]/td[1]/span[2]/div[1]/div[2]/select[1]/option[1]")},
+                {"btnSalvarEFechar", By.Id("SalvarEFechar")},
+                {"iconeAtualizarGrid", By.XPath("//body/div[2]/div[2]/div[6]/div[1]/div[1]/a[1]")},
+                {"iconeOrdenarGrid", By.XPath("//tbody/tr[1]/th[3]/a[1]")}
+            };
+            // Dicionário para registrar os valores a serem preenchidos nos campos do formulário, a fim de obter a validação dos dados posteriormente.
+            valores = new Dictionary<string, string>();                    
         }
 
-        // Acessar o menu Itens.
+        // Acessar a opção Itens do menu Itens.
         public void AcessarItem()
         {
             MenuItens.Itens(driver);
         }
         
-        // Clicar no botão Novo.
+        // Clicar no botão para cadastro de um Novo.
         public void NovoItem()
         {
-            Acao.Clicar(driver, formAcoes["btnNovoItem"]);
+            Acao.Clicar(driver, formCadastroItem["btnNovoItem"]);
         }
         
-        // Preencher o formulario com os valores informados no método construtor.
-        public void PreencherFormulario()
-        {      
-            Thread.Sleep(2000);
+        // Preencher formulario de cadastro do Item.
+        public void PreencherFormulario(string _descricao, string _precoVenda, string _precoMinimo)
+        {
+            // Preenche o dicionário com os valores a serem testados.
+            valores["descricao"] = _descricao;
+            valores["precoVenda"] = _precoVenda;
+            valores["precoMinimo"] = _precoMinimo;
 
-            Acao.PreencherCampo(driver, formAcoes["campoDescricao"], descricao);
-            Acao.Clicar(driver, formAcoes["linkVendas"]);
-            Acao.PreencherCampo(driver, formAcoes["campoPrecoVenda"], precoVenda);
-            Acao.PreencherCampo(driver, formAcoes["campoPrecoMin"], precoMinimo);
-                        
-            // Obter valores preenchidos automaticamente que serão apresentados na grid.
-            estado = Acao.ObterTexto(driver, formAcoes["campoEstado"]);
-            tipoVenda = Acao.ObterTexto(driver, formAcoes["campoTipoVenda"]);
-            procedencia = Acao.ObterTexto(driver, formAcoes["campoProcedencia"]);            
+            Thread.Sleep(2000);
+            // Preenche os campos do formulario com os valores a serem testados.
+            Acao.PreencherCampo(driver, formCadastroItem["campoDescricao"], valores["descricao"]);
+            Acao.Clicar(driver, formCadastroItem["linkVendas"]);
+            Acao.PreencherCampo(driver, formCadastroItem["campoPrecoVenda"], valores["precoVenda"]);
+            Acao.PreencherCampo(driver, formCadastroItem["campoPrecoMin"], valores["precoMinimo"]);
+
+            // Obter os valores preenchidos automaticamente que serão apresentados na grid.
+            valores["estado"] = Acao.ObterTexto(driver, formCadastroItem["campoEstado"]);
+            valores["tipoVenda"] = Acao.ObterTexto(driver, formCadastroItem["campoTipoVenda"]);
+            valores["procedencia"] = Acao.ObterTexto(driver, formCadastroItem["campoProcedencia"]);            
         }
        
-        // Clicar no botão Salver e Fechar.
+        // Clicar no botão Salver e Fechar para finalizar o cadastro.
         public void FinalizarCadastro()
         {
-            Acao.Clicar(driver, formAcoes["btnFinalizar"]);                        
+            Acao.Clicar(driver, formCadastroItem["btnSalvarEFechar"]);                        
         }
 
         // Atualizar a grid após o cadastro do item.
-        public void AtualizarGrade()
+        public void AtualizarGrid()
         {
-            Acao.Clicar(driver, formAcoes["iconeAtualizar"]);
-
-            // Ordeno a coluna Codigo da grid de forma decrescente para validar sempre o último item cadastrado.
-            Acao.Clicar(driver, formAcoes["iconeOrdenar"]);
-            Thread.Sleep(1000);
-            //Validar os itens apresentados na grid após cadastro.
-            ValidarItens.ValidarGrid(driver, descricao, "//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[4]");
-            ValidarItens.ValidarGrid(driver, tipoVenda, "//tbody/tr[1]/td[10]/div[1]/span[2]");
-            ValidarItens.ValidarGrid(driver, estado, "//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[31]");
-            ValidarItens.ValidarGrid(driver, procedencia, "//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[7]");
-            ValidarItens.ValidarGrid(driver, precoVenda, "//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[10]/div[1]/span[1]");
+            Acao.Clicar(driver, formCadastroItem["iconeAtualizarGrid"]);
+            Thread.Sleep(700);
+            // Ordeno a coluna Codigo da grid de forma decrescente para validar o último item cadastrado.
+            Acao.Clicar(driver, formCadastroItem["iconeOrdenarGrid"]);
+            Thread.Sleep(1000);            
+        }
+        // Metodo responsavel pela validação do cadastro, sendo passado como parâmetro meu dicionário com os valores testados.
+        public void ValidarCadastro()
+        {
+            ValidarItens.ValidarGrid(driver, valores);
         }
     }
 }

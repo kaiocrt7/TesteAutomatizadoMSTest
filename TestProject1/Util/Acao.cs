@@ -1,9 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+using System;
 
 namespace TestMAXIPROD.Util
 {
-    // Classe com as iterações utilizadas nos testes.
+    // Classe responsável por contralar as ações utilizadas no teste.
     public static class Acao
     {
         // Realizar as ações de preenchimento de campos.

@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[23.0.1, )"
             },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
             "Microsoft.Edge.SeleniumTools": {
               "target": "Package",
               "version": "[3.141.3, )"

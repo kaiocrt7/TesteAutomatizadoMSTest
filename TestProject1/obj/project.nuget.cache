@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GOdl/T6ZNtnHHf4gbyiMrxSykH8VBGMrEjn+26xz6UqzO9ad/pR3iXJhufzhpeId7XRb7amEYp9dqBlNYH1ahA==",
+  "dgSpecHash": "4UGkD4ndokOxcuBt/+YdYg9C95o5dq2Pi4mVNl92vJGHV9Tqa5HQntOlXaQZ7BBEFP89NyrizCGKU78axc+aiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\kaio.cesar\\source\\repos\\TestProject1\\TestProject1\\TestMAXIPROD.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\kaio.cesar\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\kaio.cesar\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.1.0\\microsoft.testplatform.objectmodel.17.1.0.nupkg.sha512",
     "C:\\Users\\kaio.cesar\\.nuget\\packages\\microsoft.testplatform.testhost\\17.1.0\\microsoft.testplatform.testhost.17.1.0.nupkg.sha512",
+    "C:\\Users\\kaio.cesar\\.nuget\\packages\\mstest.testframework\\2.2.10\\mstest.testframework.2.2.10.nupkg.sha512",
     "C:\\Users\\kaio.cesar\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\kaio.cesar\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\kaio.cesar\\.nuget\\packages\\nuget.frameworks\\5.11.0\\nuget.frameworks.5.11.0.nupkg.sha512",
