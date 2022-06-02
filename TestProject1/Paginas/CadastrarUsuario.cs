@@ -1,31 +1,16 @@
 ﻿using OpenQA.Selenium;
 using TestMAXIPROD.Util;
 
-namespace AutomacaoMaxiprod.Pages
+namespace TestMAXIPROD.Pages
 {
     internal class CadastrarUsuario
     {
         private readonly IWebDriver driver;
         private readonly Dictionary<string, By> formCadastro;
-        private readonly Dictionary<string, string> cadastroUsuario;
 
         public CadastrarUsuario(IWebDriver driver)
         {
             this.driver = driver;
-
-            // Dicionario com as informações a serem preenchidas para o cadastro do novo usuário.
-            cadastroUsuario = new Dictionary<string, string>()
-            {
-                {"nome", "Kaio Cesar Alves da Silveira."},
-                {"razao", "Teste Técnico: Analista de testes"},
-                {"regime", "Lucro real"},
-                {"uf", "GO"},
-                {"municipio", "Goiânia"},
-                {"telefone", "(62) 981142862"},
-                //{"email", "testandoinfo222@gmail.com"},
-                {"senha", "testando@123"},
-                {"confirmar", "testando@123"}
-            };
             // Dicidionário contendo a chave com o nome do elemento e o valor com a localização de cada elemento para cadastro do usuário.
             formCadastro = new Dictionary<string, By>()
             {
@@ -49,18 +34,19 @@ namespace AutomacaoMaxiprod.Pages
             Acao.Clicar(driver, formCadastro["btnCadastre-se"]);
         }
         // Preencher o formulario com o email passado pela tela de Login, caso não foi possivel logar pelo email ainda nao estar cadastrado.
-        public void PreencherFormulario(string _email)
+        public void PreencherFormulario(string nome, string razao, string regime, string uf, string municipio, string telefone,
+            string email, string senha, string confirmar)
         {
-            Acao.PreencherCampo(driver, formCadastro["campoNome"], cadastroUsuario["nome"]);
-            Acao.PreencherCampo(driver, formCadastro["campoRazao"], cadastroUsuario["razao"]);
-            Acao.Selecionar(driver, formCadastro["campoRegime"], cadastroUsuario["regime"]);
-            Acao.Selecionar(driver, formCadastro["campoUf"], cadastroUsuario["uf"]);
+            Acao.PreencherCampo(driver, formCadastro["campoNome"], nome);
+            Acao.PreencherCampo(driver, formCadastro["campoRazao"], razao);
+            Acao.Selecionar(driver, formCadastro["campoRegime"], regime);
+            Acao.Selecionar(driver, formCadastro["campoUf"], uf);
             Thread.Sleep(500);
-            Acao.Selecionar(driver, formCadastro["campoMunicipio"], cadastroUsuario["municipio"]);
-            Acao.PreencherCampo(driver, formCadastro["campoTelefone"], cadastroUsuario["telefone"]);
-            Acao.PreencherCampo(driver, formCadastro["campoEmail"], _email);
-            Acao.PreencherCampo(driver, formCadastro["campoSenha"], cadastroUsuario["senha"]);
-            Acao.PreencherCampo(driver, formCadastro["campoConfirmarSenha"], cadastroUsuario["confirmar"]);
+            Acao.Selecionar(driver, formCadastro["campoMunicipio"], municipio);
+            Acao.PreencherCampo(driver, formCadastro["campoTelefone"], telefone);
+            Acao.PreencherCampo(driver, formCadastro["campoEmail"], email);
+            Acao.PreencherCampo(driver, formCadastro["campoSenha"], senha);
+            Acao.PreencherCampo(driver, formCadastro["campoConfirmarSenha"], confirmar);
             Acao.Clicar(driver, formCadastro["campoTermos"]);
         }
         // Finalizar o cadastrado do Usuario.

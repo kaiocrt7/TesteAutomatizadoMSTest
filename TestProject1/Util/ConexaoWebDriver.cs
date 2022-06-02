@@ -1,10 +1,9 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
-using OpenQA.Selenium.Support.UI;
 
 namespace TestMAXIPROD.Util
 {
-    public static class Util
+    public static class ConexaoWebDriver
     {
         // Iniciar uma nova aba no navegador para visualizar o teste. 
        public static IWebDriver Iniciar()

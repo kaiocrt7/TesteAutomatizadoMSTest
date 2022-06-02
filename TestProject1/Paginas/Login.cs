@@ -1,7 +1,4 @@
-﻿using AutomacaoMaxiprod.Pages;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
+﻿using OpenQA.Selenium;
 using TestMAXIPROD.Util;
 
 namespace TestMAXIPROD.Pages
@@ -32,28 +29,23 @@ namespace TestMAXIPROD.Pages
 
             Acao.Clicar(driver, formLogin["btnEntrar"]);
             // Validação para identificar se o email ja possui cadastro, caso não possui cadastro o teste irá criar um novo cadastro com o email informado.
-            Thread.Sleep(2000);
-            if (!ValidarLogin())
-            {
-                cadastrarUsuario.NovoCadastro();
-                cadastrarUsuario.PreencherFormulario(_email);
-                cadastrarUsuario.FinalizarCadastro();                
-            }
-            Thread.Sleep(1500);
+            Thread.Sleep(2000);            
         }
         // Validação após a tentativa de logar na aplicação.
-        private bool ValidarLogin()
+        public bool ValidarLogin()
         {
-            Thread.Sleep(1200);
+            Thread.Sleep(1500);
             if (driver.PageSource.Contains("simBtn"))
             {
                 // Se tiver sessão do usuário em aberto.
                 Acao.Clicar(driver, By.Name("simBtn"));
+                Thread.Sleep(1700);
+                return true;
             }
             else
             if (driver.PageSource.Contains("E-mail e/ou senha inválidos."))
             {
-                // Se o email informado não tiver cadastro na aplicação, return false para realizar um novo cadastro com o email.
+                // Se o email informado não tiver cadastro na aplicação, return false.
                 return false;
             }
             return true;            

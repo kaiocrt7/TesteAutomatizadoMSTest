@@ -9,11 +9,11 @@ namespace TestMAXIPROD.Util
             // Dicionario contendo como chave a coluna da grid e o valor contendo a posição de cada elemento da grid.
             Dictionary<string, By> gridItens = new()
             {
-                {"colunaDescricao", By.XPath("//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[4]")},
+                {"colunaDescricao", By.XPath("//tbody[1]/tr[1]/td[4]")},
                 {"colunaTipoVenda", By.XPath("//tbody/tr[1]/td[10]/div[1]/span[2]")},
-                {"colunaEstado", By.XPath("//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[31]")},
-                {"colunaProcedencia", By.XPath("//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[7]")},
-                {"colunaPrecoVenda", By.XPath("//body[1]/div[2]/div[2]/div[6]/div[3]/table[1]/tbody[1]/tr[1]/td[10]/div[1]/span[1]")}
+                {"colunaEstado", By.XPath("//tbody[1]/tr[1]/td[31]")},
+                {"colunaProcedencia", By.XPath("//tbody[1]/tr[1]/td[7]")},
+                {"colunaPrecoVenda", By.XPath("//tbody[1]/tr[1]/td[10]/div[1]/span[1]")}
             };
             // Chamada da função validar, passando meus valores e a localização dos elmentos das colunas da grid.
             Validar(driver, _valores["descricao"], gridItens["colunaDescricao"]);
